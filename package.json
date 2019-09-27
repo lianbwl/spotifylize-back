@@ -1,0 +1,17 @@
+{
+  "name": "spotifylize",
+  "version": "1.0.0",
+  "description": "Spotify to Deezer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julian Vianna",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0"
+  }
+}
