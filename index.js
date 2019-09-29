@@ -7,6 +7,8 @@ let app = express();
 
 let access_token;
 
+app.use(cors());
+
 app.get("/api/auth/spotify", function(req, res) {
 	res.redirect(
 		"https://accounts.spotify.com/authorize?" +
