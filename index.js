@@ -5,10 +5,7 @@ let keys = require("./config/keys");
 let cors = require("cors");
 let app = express();
 
-let code;
 let access_token;
-
-app.use(cors());
 
 app.get("/api/auth/spotify", function(req, res) {
 	res.redirect(
@@ -24,11 +21,8 @@ app.get("/api/auth/spotify", function(req, res) {
 });
 
 app.get("/callback", function(req, res) {
-	code = req.query.code;
-	res.redirect("/api/autorize");
-});
+	let code = req.query.code;
 
-app.get("/api/autorize", function(req, res) {
 	let authOptions = {
 		url: "https://accounts.spotify.com/api/token",
 		form: {
