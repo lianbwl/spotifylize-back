@@ -61,6 +61,32 @@ app.get("/api/profile", function(req, res) {
 	});
 });
 
+app.get("/api/playlists", function(req, res) {
+	let options = {
+		url: "https://api.spotify.com/v1/me/playlists",
+		headers: { Authorization: "Bearer " + access_token },
+		json: true
+	};
+
+	request.get(options, function(error, response, body) {
+		console.log(body);
+		res.send(body);
+	});
+});
+
+app.get("/api/playlist/:id", function(req, res) {
+	let options = {
+		url: "https://api.spotify.com/v1/playlists/" + req.params.id,
+		headers: { Authorization: "Bearer " + access_token },
+		json: true
+	};
+
+	request.get(options, function(error, response, body) {
+		console.log(body);
+		res.send(body);
+	});
+});
+
 app.listen(5000, function() {
 	console.log("App listening on port 5000!");
 });
